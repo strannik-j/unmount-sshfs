@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
 #  unmount-sshfs.py
@@ -43,16 +43,7 @@ def process_num(process=''):
     return commands.getoutput('ps aux| grep %s | grep -v grep | grep -v python' % process)
 
 def create_list(str0):
-    list0 = []
-    x = ''
-    for i in str0:
-
-        if i != '\n':
-            x += i
-        else:
-            list0.append(x)
-            x = ''
-    list0.append(x)
+    list0 = str0.splitlines()
     return list0
     
 def main():
